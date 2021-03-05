@@ -1,0 +1,13 @@
+[
+{
+"username":"test1",
+"email": "chaseadmin11@mail.com",
+"sub":"THIS FIELD IS EXACT SAME UUID AS username FIELD, CAN IGNORE"
+},
+ 
+{
+"username":"test2",
+"email": "chaseadmin22@mail.com",
+"sub":"THIS FIELD IS EXACT SAME UUID AS username FIELD, CAN IGNORE"
+}
+]

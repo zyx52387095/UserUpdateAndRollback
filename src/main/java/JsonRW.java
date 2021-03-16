@@ -16,8 +16,6 @@ public class JsonRW {
 
     public List<CognitoUser> readJsonFile(String path) {
         ObjectMapper mapper = new ObjectMapper();
-//        model.CognitoUser[] cognitoUsers = mapper.readValue(new File(path), model.CognitoUser[].class);
-
         List<CognitoUser> cognitoUserList = null;
         try {
             cognitoUserList = mapper.readValue(new File(path),
@@ -25,7 +23,6 @@ public class JsonRW {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return cognitoUserList;
     }
 

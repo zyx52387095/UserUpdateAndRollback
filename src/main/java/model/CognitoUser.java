@@ -7,4 +7,5 @@ public class CognitoUser {
     public String username;
     public String email;
     public String sub;
+    public String groups;
 }

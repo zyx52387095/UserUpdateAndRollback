@@ -31,7 +31,7 @@ dependencies {
 }
 jar {
     manifest {
-        attributes 'Main-Class': 'UpdateCognitoIdMain'
+        attributes 'Main-Class': 'CognitoIdMain'
         archivesBaseName = 'UpdateCognitoId'
     }
     from {
@@ -41,19 +41,18 @@ jar {
 jar {
     manifest {
         attributes 'Main-Class': 'StatusUpdateMain'
-        archivesBaseName = 'StatusUpdate'
+        archivesBaseName = 'UpdateStatus'
     }
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-jar {
-    manifest {
-        attributes 'Main-Class': 'RollBackMain'
-        archivesBaseName = 'RollBack'
-    }
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'RollBackMain'
+//        archivesBaseName = 'RollBack'
+//    }
+//    from {
+//        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+//}

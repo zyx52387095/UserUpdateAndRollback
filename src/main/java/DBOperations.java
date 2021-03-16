@@ -20,10 +20,6 @@ public class DBOperations {
         return conn;
     }
 
-
-//    static DataSource dataSource = DataSourceFactory.getPostgresDataSource("postgres", "897t4sgx8at");
-
-
     //get all merchant users without status: deleted, suspended and email_sent
     static String sqlSelectAllMerchants = "select id, customer_status "
             + "from customer "
@@ -40,10 +36,11 @@ public class DBOperations {
             + "from customer "
             + "where customer_status = 'ACQ_SUSPENDED'";
 
-
+    //get status by user id for merthchant
     static String sqlUpdateOperatorStatus = "update fsdp_user "
             + "set status = ? "
             + "where id = ?";
+    //get status by user id for operator
     static String sqlUpdateaMerchantStatus = "update customer "
             + "set customer_status = ? "
             + "where id = ?";
@@ -52,11 +49,12 @@ public class DBOperations {
             + "status_tracking(id,object_id,object_type, previous_status, current_status,update_date) "
             + "VALUES(?,?,?,?,?,?)";;
 
-
+    //get user id by Email for merchant
     static String sqlGetMerchantId = "select e.EMAIL,chc.CUSTOMER_ID as id "
             + "from customer_has_contact chc "
             + "join email e on e.contact_id = chc.contact_id "
             + "where EMAIL = ?";
+    //get user id by Email for operator
     static String sqlGetOperatorId = "select fuser.ID" +
             " from principal p" +
             " join credential c on c.principal_id = p.id" +
@@ -72,9 +70,4 @@ public class DBOperations {
     static String getOIdandPrIdentity = "SELECT pr_identity, oid "
             + "FROM security_principal "
             + "WHERE pr_identity = ?";
-
-
-
-
-
 }
